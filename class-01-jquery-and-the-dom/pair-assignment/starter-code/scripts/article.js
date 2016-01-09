@@ -20,9 +20,9 @@ Article.prototype.toHtml = function() {
 
   // Include the publication date as a 'title' attribute to show on hover:
   $newArticle.find('h1').text(this.title);
-  $newArticle.find('address').html('<a href="'+ this.authorUrl+'">' + this.author + '</a>');
+  $newArticle.find('a').attr('href', this.authorUrl).text(this.author);
   $newArticle.find('section.article-body').html(this.body);
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
+  $newArticle.find('time[pubdate]').attr('dateTime', this.publishedOn);
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
 
   $newArticle.append('<hr>');
