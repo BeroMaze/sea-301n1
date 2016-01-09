@@ -13,12 +13,7 @@ Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
 
   $newArticle.data('category', this.category);
-  // TODO: Use jQuery to fill in the template with properties
-  // from this particular Article instance. We need to fill in:
-  // the author name and url, the article title and body, and the
-  // publication date.
 
-  // Include the publication date as a 'title' attribute to show on hover:
   $newArticle.find('h1').text(this.title);
   $newArticle.find('a').attr('href', this.authorUrl).text(this.author);
   $newArticle.find('section.article-body').html(this.body);
@@ -27,7 +22,6 @@ Article.prototype.toHtml = function() {
 
   $newArticle.append('<hr>');
   $newArticle.removeClass('template');
-  // TODO: This cloned article is no longer a template, so we should remove that class...
 
   return $newArticle;
 };
