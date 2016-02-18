@@ -116,7 +116,7 @@
 
     Article.numWordsByAuthor().forEach(function(stat) {
       $('.author-stats').append(template(stat));
-    })
+    });
 
     $('#blog-stats .articles').text(Article.all.length);
     $('#blog-stats .words').text(Article.numWordsAll());
