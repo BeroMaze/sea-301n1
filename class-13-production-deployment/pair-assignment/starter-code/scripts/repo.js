@@ -11,17 +11,6 @@
     ).done(function(data) {
       repos.all = data;
     }).done(callback);
-
-  //   $.ajax({
-  //     url: 'https://api.github.com/users/beromaze/repos' +
-  //           '?per_page=100' +
-  //           '&sort=updated',
-  //     type: 'GET',
-  //     headers: { 'Authorization': 'token ' + githubToken },
-  //     success: function(data, message, xhr) {
-  //       repos.all = data;
-  //     }
-  //   }).done(callback);
   };
 
   repos.with = function(attr) {
